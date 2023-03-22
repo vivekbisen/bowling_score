@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require_relative "board"
+
+board = Board.new("The dudes")
+["Strike", 7, "Spare", 9, "Miss", "Strike", "Miss", 8, 8, "Spare", "Miss", 6, "Strike", "Strike", "Strike", 8, 1].each do |input|
+  board.add_input(input)
+end
+puts board.name
+puts board.view
+puts
+
+new_board = Board.new("Simple")
+(1..7).to_a.each do |input|
+  new_board.add_input(input)
+end
+puts new_board.name
+puts new_board.view
